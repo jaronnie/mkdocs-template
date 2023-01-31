@@ -18,7 +18,7 @@ jobs:
         with:
           python-version: '3.10'
 
-      - name: Build Vuepress
+      - name: Build mkdocs
         run: |
           pip3 install -i https://pypi.tuna.tsinghua.edu.cn/simple mkdocs-material
           mkdocs build
