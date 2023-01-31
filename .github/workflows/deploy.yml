@@ -20,4 +20,9 @@ jobs:
       - name: Build mkdocs
         run: |
           pip3 install -i https://pypi.tuna.tsinghua.edu.cn/simple mkdocs-material
-          mkdocs gh-deploy --force
+          mkdocs build
+
+      - name: Deploy
+        uses: mhausenblas/mkdocs-deploy-gh-pages@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
