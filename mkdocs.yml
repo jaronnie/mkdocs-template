@@ -1,0 +1,3 @@
+site_name: mkdocs example
+theme:
+  name: material

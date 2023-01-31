@@ -1,0 +1,31 @@
+name: Deploy
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Download Source file
+        uses: actions/checkout@v2
+        with:
+          ref: main
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Build Vuepress
+        run: |
+          pip3 install -i https://pypi.tuna.tsinghua.edu.cn/simple mkdocs-material
+          mkdocs build
+
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@4.1.3
+        with:
+          BRANCH: gh-pages
+          FOLDER: site
+          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
