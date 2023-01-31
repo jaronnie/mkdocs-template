@@ -12,16 +12,6 @@ jobs:
         uses: actions/checkout@v2
         with:
           ref: main
-
-      - name: Setup Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.10'
-      - name: Build mkdocs
-        run: |
-          pip3 install -i https://pypi.tuna.tsinghua.edu.cn/simple mkdocs-material
-          mkdocs build
-
       - name: Deploy
         uses: mhausenblas/mkdocs-deploy-gh-pages@master
         env:
