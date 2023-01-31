@@ -20,11 +20,4 @@ jobs:
       - name: Build mkdocs
         run: |
           pip3 install -i https://pypi.tuna.tsinghua.edu.cn/simple mkdocs-material
-          mkdocs build
-
-      - name: Deploy
-        uses: JamesIves/github-pages-deploy-action@4.1.3
-        with:
-          BRANCH: gh-pages
-          FOLDER: site
-          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+          mkdocs gh-deploy --force
