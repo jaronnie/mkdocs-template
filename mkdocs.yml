@@ -1,3 +1,31 @@
-site_name: mkdocs example
+site_name: 'mkdocs template 💁'
+site_url: https://mkdocs-template.jaronnie.com/
+repo_url: https://github.com/jaronnie/mkdocs-template
+edit_uri: edit/main/docs/
+
 theme:
   name: material
+  custom_dir: docs
+  palette:
+    primary: light blue
+
+nav:
+  - index.md
+
+plugins:
+  - search
+  - redirects:
+      redirect_maps:
+        'repo.md':      'https://github.com/jaronnie/mkdocs-template'
+        'issues.md':    'https://github.com/jaronnie/mkdocs-template/issues'
+        'prs.md':       'https://github.com/jaronnie/mkdocs-template/pulls'
+        'releases.md':  'https://github.com/jaronnie/mkdocs-template/releases'
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
