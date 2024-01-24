@@ -1,1 +1,2 @@
-mkdocs-material mkdocs-redirects
+mkdocs-material
+mkdocs-redirects
